@@ -12,7 +12,7 @@
             string defaultInput = Console.ReadLine();
             string sentence;
             if (defaultInput.ToLower() == "y")
-                sentence = "To be or not to be";
+                sentence = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
             else
             {
                 Console.WriteLine("Enter your input:");
@@ -21,7 +21,9 @@
 
             char[] delimiters = new char[] { ' ', '.', ',', ';', ':', '!', '?' };
             string[] words = sentence.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+
             MyHashTable<string, int> hashTable = new MyHashTable<string, int>(words.Length);
+
             foreach (string word in words)
             {
                 string key;
