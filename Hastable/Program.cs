@@ -43,7 +43,10 @@
                 hashTable.Add(key, value);
             }
 
+            hashTable.Remove("avoidable");
+
             hashTable.Display();
         }
     }
+
 }

@@ -55,6 +55,30 @@
             }
         }
 
+        public void Remove(K key)
+        {
+            int position = GetArrayPosition(key);
+            LinkedList<MyMapNode<K, V>> linkedList = GetLinkedList(position);
+
+            bool itemFound = false;
+            MyMapNode<K, V> foundItem = null;
+
+            foreach (MyMapNode<K, V> item in linkedList)
+            {
+                if (item.Key.Equals(key))
+                {
+                    itemFound = true;
+                    foundItem = item;
+                    break;
+                }
+            }
+
+            if (itemFound)
+            {
+                linkedList.Remove(foundItem);
+            }
+        }
+
         public void Display()
         {
             for (int i = 0; i < size; i++)
@@ -80,5 +104,4 @@
             return items[position];
         }
     }
-
 }
